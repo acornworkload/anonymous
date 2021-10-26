@@ -46,12 +46,14 @@ install the required packages.
     * `utils/row_col_address_access.py`: the code that counts address access and creates address access vectors.
     * `utils/dataloader.py`: the code related to loading workload sequence data, and extracting feature vectors.
 
-## How to extract feature vectors for sample data
+## Usage
 
 Type the following command to install packages used in our codes:
 ```bash
     pip install -r requirements.txt
 ```
+
+### How to extract feature vectors for sample data
 
 Type the following command to extract feature vectors for the cmd field and the address-related fields:
 ```bash
@@ -76,7 +78,7 @@ current directory
 ```
 
 
-## How to train and test unknown workload detection for sample data
+### How to train and test unknown workload detection for sample data
 
 Type the following command for training and testing new workload detection:  
 ```bash
