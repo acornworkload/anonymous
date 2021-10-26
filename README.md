@@ -23,7 +23,7 @@ If you train and test our model, we recommend using the full version of our feat
 ## Model
 We provide  MLP and SVD-based detectors trained for the second dataset in `models` directory.
 * `model_mlp.pt`: a trained 2-layer MLP model
-* `detectors.npy`: svd-based detectors for all class
+* `detectors.npy`: SVD-based detectors for all class. Due to the size limit, we provide the download link: [\[Download\]](https://drive.google.com/file/d/1P065Kf64_1OdqC5W-6QAMMOYvL-vdq3l/view?usp=sharing).
 * `detectors_threshold.npy`: thresholds for all class
 
 
