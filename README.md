@@ -30,9 +30,6 @@ We provide  MLP and SVD-based detectors trained for the second dataset in `model
 ## Code Information
 Codes in this directory are implemented by Python 3.7.
 This repository contains the code for Acorn, an ACcurate Open-set recognizer for woRkload sequeNce. 
-The required Python packages are described in ./requirments.txt.
-If pip3 is installed on your system, you can type the following command to
-install the required packages.
 
 * The code of Acorn is in this directory.
     * `main.py`: the code related to training a classification model, constructing unknown class detectors, and measuring accuracies for our metrics.
@@ -48,7 +45,9 @@ install the required packages.
 
 ## Usage
 
-Type the following command to install packages used in our codes:
+The required Python packages are described in ./requirments.txt.
+If pip3 is installed on your system, you can type the following command to
+install the required packages:
 ```bash
     pip install -r requirements.txt
 ```
