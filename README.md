@@ -10,15 +10,50 @@ The following table describes datasets used in our experiment.
 | SEC-seq       |         40 |            4 |    586,885 |            293,444 |               93,491 |
 | Memtest86-seq |         31 |            3 |    433,334 |            216,696 |               77,018 |
 
+### Sample data for Memtest86-seq data
+
 Due to the size limit (about 2TB) and the anonymous policy, we cannot upload the entire raw data for the second data.
 We upload the sample raw data and their feature vectors of the second dataset (Memtest86-seq).
  * `raw_sample`: [\[Download\]](https://drive.google.com/file/d/1_NEuUuMqG36v7P7R_XCOl7guPSFYGyXP/view?usp=sharing)
  * `features_intermediate`:[\[Download\]](https://drive.google.com/file/d/1GvE65M-Mz3WI_wBkMeogOpPOMq34wR25/view?usp=sharing)
  * `features_sample`:[\[Download\]](https://drive.google.com/file/d/1Q-RQU-FhQUkfgESu9nDFMTHDPKMSRGk2/view?usp=sharing)
 
+### Full feature vectors for Memtest86-seq data
+
 We also upload the full feature vectors of the second dataset (Memtest86-seq).
 If you train and test our model, we recommend using the full version of our feature vectors.
 * `features_full`:[\[Download\]](https://drive.google.com/file/d/18f0IUuMsPgIjPwdXpwvqxOEmcGIgqUx4/view?usp=sharing)
+
+### Raw data description
+The following is the first 10 rows in P01 workload:
+```
+5,1,1,0,648
+5,1,0,0,648
+1,0,2,1,35778
+1,1,2,1,35778
+5,0,2,1,640
+1,0,1,3,32991
+5,1,2,1,640
+1,1,1,3,32991
+5,0,1,3,640
+5,1,1,3,640
+```
+Where each column indicates: 
+1. **_CMD_** - Command ID: Values: \[1,3,5,6,7\]
+2. **_Rank_** - Rank number: Range: \[0,1\]
+3. **_Bank Group_** - Bank group number. Range: \[0,3\]
+4. **_Bank_** - Bank number. Range: \[0,3\]
+5. **_Address_** - Row address number when _CMD_ is ACT and col address number when _CMD_ is RDA or WRA. Range: \[-1, 131071\]
+
+Decoding for the **_CMD_** is as following: 
+* 1 - ACT
+* 3 - RDA
+* 5 - WRA
+* 6 - PRE
+* 7 - PREA
+
+More about CMD field can be found in [Documentation](https://www.jedec.org/sites/default/files/docs/JESD79-4.pdf).
+
 
 ## Model
 We provide  MLP and SVD-based detectors trained for the second dataset in `models` directory.
@@ -29,7 +64,7 @@ We provide  MLP and SVD-based detectors trained for the second dataset in `model
 
 ## Code Information
 Codes in this directory are implemented by Python 3.7.
-This repository contains the code for Acorn, an ACcurate Open-set recognizer for woRkload sequeNce. 
+This repository contains the code for Acorn, an ACcurate Open-set recognition method for woRkload sequeNce. 
 
 * The code of Acorn is in this directory.
     * `main.py`: the code related to training a classification model, constructing unknown class detectors, and measuring accuracies for our metrics.
